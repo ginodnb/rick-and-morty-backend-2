@@ -23,6 +23,8 @@ async function deleteChar(req,res) {
     let deleteCharacter = await charModel.findByIdAndDelete(id);
     console.log(deleteCharacter)
     res.send(`${deleteCharacter.charName} character has been deleted`)
+    // let allDigimons = await digimonModel.find({});
+    // res.send(allDigimons)
 }
 
 async function addCharHandler(req,res) {
@@ -38,10 +40,27 @@ async function addCharHandler(req,res) {
     res.send(newChar);
 }
 
+async function updateCharHandler(req,res) {
+    const id = req.params.id;
+    const {charName,charStatus,charLocation,charImage,charEpisodes} = req.body;
+    console.log("inside update", req.body);
+    let updatedChar = await charModel.findByIdAndUpdate(id, {
+        charName,
+        charStatus,
+        charLocation,
+        charImage,
+        charEpisodes
+    })
+    res.send(updatedChar);
+    // let allCharacters = await charModel.find({});
+    // res.send(allCharacters);
+}
+
 module.exports = {
     getEpisodesAPI,
     getCharAPI,
     getFaveChar,
     addCharHandler,
-    deleteChar
+    deleteChar,
+    updateCharHandler
 }

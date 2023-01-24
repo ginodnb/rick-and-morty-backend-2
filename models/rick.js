@@ -3,11 +3,11 @@
 const mongoose = require("./index");
 
 const charSchema = new mongoose.Schema({
-    CharName: String,
-    CharStatus: String,
-    CharLocation: String,
-    CharImage: String,
-    CharEpisodes: String
+    charName: String,
+    charStatus: String,
+    charLocation: String,
+    charImage: String,
+    charEpisodes: String
 })
 
 const charModel = mongoose.model("characters",charSchema);
@@ -23,6 +23,6 @@ function seedData() {
     newChar.save();
 }
 
-// seedData();
+seedData();
 
 module.exports = charModel;
