@@ -22,11 +22,13 @@ rickRouter.get("/rick/charapi", rickHandlers.getCharAPI);
 // }
 // })
 
-rickRouter.post("/rick",rickHandlers.addCharHandler)
+rickRouter.post("/rick",rickHandlers.addCharHandler);
 
 rickRouter.get("/rick", rickHandlers.getFaveChar);
 
 rickRouter.delete("/rick/:id", rickHandlers.deleteChar);
+
+rickRouter.put("/rick/:id",rickHandlers.updateCharHandler)
 
 
 
