@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "start": "node index.js"
   },
   "name": "rick-and-morty-backend-2",
   "description": "",
